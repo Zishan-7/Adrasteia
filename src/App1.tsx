@@ -3,6 +3,7 @@ import { Theme, styled } from '@mui/material'
 import CustomTabs from './components/CustomTabs'
 import Swap from './pages/Swap'
 import Wallet from './pages/Wallet'
+import { useAccountAbstraction } from './store/accountAbstractionContext'
 
 const TabContainer = ({ value }: { value: number }) => {
   if (value == 0) {
@@ -16,6 +17,9 @@ const TabContainer = ({ value }: { value: number }) => {
 const Appc = () => {
   const [isChatOpen, setIsChatOpen] = useState(false)
   const [value, setValue] = React.useState(0)
+  const [isLoggedIn, setisLoggedIn] = useState(false)
+
+  const { loginWeb3Auth, isAuthenticated, chainId } = useAccountAbstraction()
 
   const toggleChat = () => {
     setIsChatOpen((prev) => !prev)
@@ -28,10 +32,21 @@ const Appc = () => {
       </ChatButton>
       {isChatOpen && (
         <ChatWidget>
-          {/* <App /> */}
-          <TabContainer value={value} />
-
-          <CustomTabs value={value} setValue={setValue} />
+          {!isAuthenticated ? (
+            <div className="flex h-[600px] w-full flex-col justify-center items-center">
+              <button
+                onClick={loginWeb3Auth}
+                className="flex h-14 w-full items-center justify-center rounded-lg bg-[#64c2ff] font-medium"
+              >
+                Login
+              </button>
+            </div>
+          ) : (
+            <>
+              <TabContainer value={value} />
+              <CustomTabs value={value} setValue={setValue} />
+            </>
+          )}
         </ChatWidget>
       )}
     </React.Fragment>

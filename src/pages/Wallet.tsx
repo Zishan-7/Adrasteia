@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import TransactionRow from 'src/components/TransactionRow/TransactionRow'
 import WalletCard from 'src/components/WalletCard/WalletCard'
 
