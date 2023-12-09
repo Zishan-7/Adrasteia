@@ -36,7 +36,7 @@ type accountAbstractionContextValue = {
   setSafeSelected: React.Dispatch<React.SetStateAction<string>>
   setTokenAddress: React.Dispatch<React.SetStateAction<string>>
   isRelayerLoading: boolean
-  relayTransaction: () => Promise<void>
+  relayTransaction: (address: string, amount: number) => Promise<void>
   gelatoTaskId?: string
   openStripeWidget: () => Promise<void>
   closeStripeWidget: () => Promise<void>
@@ -316,16 +316,16 @@ const AccountAbstractionProvider = ({ children }: { children: JSX.Element }) => 
   }, [chainId])
 
   // relay-kit implementation using Gelato
-  const relayTransaction = async () => {
+  const relayTransaction = async (address: string, amount: number) => {
     if (web3Provider) {
       setIsRelayerLoading(true)
 
       // we use a dump safe transfer as a demo transaction
       const dumpSafeTransafer: MetaTransactionData[] = [
         {
-          to: safeSelected,
+          to: address,
           data: '0x',
-          value: ethers.parseUnits('0.01', 'ether').toString(),
+          value: ethers.parseUnits(amount.toString(), 'ether').toString(),
           operation: 0 // OperationType.Call,
         }
       ]

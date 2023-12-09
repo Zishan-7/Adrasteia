@@ -5,6 +5,7 @@ import Swap from './pages/Swap'
 import Wallet from './pages/Wallet'
 import { useAccountAbstraction } from './store/accountAbstractionContext'
 import App from './App'
+import { ArrowCircleDown, ArrowDropDown, ArrowDropUp, ArrowUpward } from '@mui/icons-material'
 
 const TabContainer = ({ value }: { value: number }) => {
   if (value == 0) {
@@ -29,7 +30,7 @@ const Appc = () => {
   return (
     <React.Fragment>
       <ChatButton onClick={toggleChat} isOpen={isChatOpen}>
-        {isChatOpen ? 'Close Chat' : 'Open Chat'}
+        {isChatOpen ? <ArrowDropDown /> : <ArrowDropUp />}
       </ChatButton>
       {isChatOpen && (
         <ChatWidget>
@@ -65,7 +66,7 @@ const ChatButton = styled('button')<{ isOpen: boolean }>(
       width:5px;
       height:5px;
       border-radius: 50%;
-      background-color: ${theme.palette.secondary.light};
+      background-color: #64c2ff;
       color: ${theme.palette.getContrastText(theme.palette.secondary.light)};
       padding: 25px;
       cursor: pointer;
