@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 
-const FromTokenContainer = () => {
+interface FromTokenContainerProps {
+  swapData: any
+  setSwapData: any
+}
+
+const FromTokenContainer = ({ setSwapData, swapData }: FromTokenContainerProps) => {
   const [amount, setAmount] = useState<number>(0)
 
   return (
@@ -18,7 +23,15 @@ const FromTokenContainer = () => {
       </div>
 
       <div className="flex justify-between items-center gap-x-3">
-        <select className="bg-transparent focus:outline-none focus:ring-0 text-2xl">
+        <select
+          onChange={(e) => {
+            setSwapData({
+              ...swapData,
+              swapData: e.target.value
+            })
+          }}
+          className="bg-transparent focus:outline-none focus:ring-0 text-2xl"
+        >
           <option>ETH</option>
           <option>BTC</option>
           <option>MATIC</option>

@@ -4,6 +4,7 @@ import CustomTabs from './components/CustomTabs'
 import Swap from './pages/Swap'
 import Wallet from './pages/Wallet'
 import { useAccountAbstraction } from './store/accountAbstractionContext'
+import App from './App'
 
 const TabContainer = ({ value }: { value: number }) => {
   if (value == 0) {
