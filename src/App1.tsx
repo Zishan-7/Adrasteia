@@ -6,6 +6,7 @@ import Wallet from './pages/Wallet'
 import { useAccountAbstraction } from './store/accountAbstractionContext'
 import App from './App'
 import { ArrowCircleDown, ArrowDropDown, ArrowDropUp, ArrowUpward } from '@mui/icons-material'
+import Ecom from './pages/Ecom'
 
 const TabContainer = ({ value }: { value: number }) => {
   if (value == 0) {
@@ -29,6 +30,7 @@ const Appc = () => {
 
   return (
     <React.Fragment>
+      <Ecom />
       <ChatButton onClick={toggleChat} isOpen={isChatOpen}>
         {isChatOpen ? <ArrowDropDown /> : <ArrowDropUp />}
       </ChatButton>
