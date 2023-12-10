@@ -1,30 +1,50 @@
-# Account Abstraction demo app
+# Adrasteia
 
-[The Safe{Core} SDK](https://github.com/safe-global/safe-core-sdk) allows builders to add account abstraction functionality into their apps. This demo is an example on how to use our different packages (Auth Kit, OnRamp Kit & Relay Kit).
+## Overview
 
-See the [Safe{Core} Account Abstraction SDK Docs](https://docs.safe.global/learn/safe-core-account-abstraction-sdk) for more details.
+This repository contains a demo application showcasing the implementation of account abstraction in a website widget. Account abstraction is a powerful feature that allows users to interact with the application without the need for a traditional user account. This demo app highlights the seamless and user-friendly experience made possible through account abstraction.
 
-## Installation
+## Features
 
-To run this project locally:
+- **Account Abstraction**: Users can access and use the application without the need for a dedicated user account. This eliminates the hassle of traditional sign-up processes.
 
-Install deps:
+- **Web Widget Integration**: The demo includes a website widget that can be easily integrated into any web application. The widget leverages the account abstraction feature, providing a smooth and frictionless user experience.
 
-```bash
-yarn install
-```
+- **Secure Transactions**: All interactions within the app, including transactions and data exchanges, are secured using industry-standard encryption and security practices.
 
-Create a `.env` file (see `example.env`)
+## Getting Started
 
-```
-REACT_APP_STRIPE_BACKEND_BASE_URL=https://aa-stripe.safe.global
-REACT_APP_STRIPE_PUBLIC_KEY=pk_test_51MZbmZKSn9ArdBimSyl5i8DqfcnlhyhJHD8bF2wKrGkpvNWyPvBAYtE211oHda0X3Ea1n4e9J9nh2JkpC7Sxm5a200Ug9ijfoO
-REACT_APP_MONERIUM_CLIENT_ID={YOUR_MONERIUM_CLIENT_ID}
-REACT_APP_MONERIUM_REDIRECT_URL={YOUR_MONERIUM_REDIRECT_URL}
-```
+### Prerequisites
 
-Run the demo App:
+- Node.js installed on your machine
+- Git installed on your machine
 
-```bash
-yarn start
-```
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Zishan-7/Adrasteia
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd Adrasteia
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   yarn install
+   ```
+
+### Usage
+
+1. Start the development server:
+
+   ```bash
+   yarn start
+   ```
+
+2. Open your browser and go to [http://localhost:3000](http://localhost:3000) to view the demo app.
