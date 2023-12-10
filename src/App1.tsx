@@ -20,7 +20,6 @@ const TabContainer = ({ value }: { value: number }) => {
 const Appc = () => {
   const [isChatOpen, setIsChatOpen] = useState(false)
   const [value, setValue] = React.useState(0)
-  const [isLoggedIn, setisLoggedIn] = useState(false)
 
   const { loginWeb3Auth, isAuthenticated, chainId } = useAccountAbstraction()
 

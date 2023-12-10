@@ -7,7 +7,7 @@ const Product = () => {
   return (
     <div className="h-96 w-72 border rounded-lg border-[#005792] flex flex-col">
       <img src={Laptop} alt="Laptop" width={'300px'} height={'20px'} />
-      <h1 className="text-xl font-bold my-3 ml-2">Macbook Pro MATIC 0.05</h1>
+      <h1 className="text-xl font-bold my-3 ml-2">Macbook Pro: MATIC 0.05</h1>
 
       <button
         onClick={async () => {

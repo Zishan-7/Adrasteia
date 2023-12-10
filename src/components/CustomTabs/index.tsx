@@ -55,8 +55,8 @@ export default function CustomTabs({ value, setValue }: CustomTabsProps) {
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Home" {...a11yProps(0)} />
           <Tab label="Swap" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
-          <Tab label="Item Four" {...a11yProps(3)} />
+          {/* <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="Item Four" {...a11yProps(3)} /> */}
         </Tabs>
       </Box>
     </Box>
