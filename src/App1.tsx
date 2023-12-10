@@ -38,7 +38,7 @@ const Appc = () => {
             <div className="flex h-[600px] w-full flex-col justify-center items-center">
               <button
                 onClick={loginWeb3Auth}
-                className="flex h-14 w-full items-center justify-center rounded-lg bg-[#64c2ff] font-medium"
+                className="flex text-white h-14 w-full items-center justify-center rounded-lg bg-[#005792] font-medium"
               >
                 Login
               </button>
@@ -66,7 +66,7 @@ const ChatButton = styled('button')<{ isOpen: boolean }>(
       width:5px;
       height:5px;
       border-radius: 50%;
-      background-color: #64c2ff;
+      background-color: #005792;
       color: ${theme.palette.getContrastText(theme.palette.secondary.light)};
       padding: 25px;
       cursor: pointer;

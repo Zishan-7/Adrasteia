@@ -2,10 +2,14 @@ import { LinearProgress } from '@mui/material'
 import { useState } from 'react'
 import { useAccountAbstraction } from 'src/store/accountAbstractionContext'
 
-const SendCrypto = () => {
+interface SendCryptoProps {
+  getTransactions: (address: string) => Promise<void>
+}
+
+const SendCrypto = ({ getTransactions }: SendCryptoProps) => {
   const [address, setaddress] = useState('')
   const [amount, setAmount] = useState(0)
-  const { relayTransaction, isRelayerLoading } = useAccountAbstraction()
+  const { relayTransaction, isRelayerLoading, safeSelected } = useAccountAbstraction()
 
   if (isRelayerLoading) {
     return (
@@ -25,7 +29,7 @@ const SendCrypto = () => {
         onChange={(e) => setaddress(e.target.value)}
         name="walletAddress"
         type="text"
-        className="w-full border border-gray-300 rounded-lg p-2"
+        className="w-full border border-[#005792] rounded-lg p-2"
       />
 
       <div className="flex w-full gap-x-4 mt-4">
@@ -37,12 +41,15 @@ const SendCrypto = () => {
             onChange={(e) => setAmount(parseFloat(e.target.value))}
             name="amount"
             type="number"
-            className="w-full border border-gray-300 rounded-lg p-2"
+            className="w-full border border-[#005792] rounded-lg p-2"
           />
         </div>
         <button
-          onClick={() => relayTransaction(address, amount)}
-          className="flex h-11 w-1/2 items-center mt-auto  justify-center rounded-lg bg-[#64c2ff] font-medium"
+          onClick={async () => {
+            await relayTransaction(address, amount)
+            getTransactions(safeSelected ? safeSelected : '')
+          }}
+          className="flex h-11 text-white w-1/2 items-center mt-auto  justify-center rounded-lg bg-[#005792] font-medium"
         >
           Send
         </button>

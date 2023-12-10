@@ -33,7 +33,7 @@ const FromTokenContainer = ({ setSwapData, swapData }: FromTokenContainerProps) 
 
         {/* <div className="flex ml-auto">
           <p className="text-sm text-gray-400 font-light">Balance : 100</p>
-          <p onClick={() => setAmount(100)} className="text-[#64c2ff] text-sm ml-5 cursor-pointer">
+          <p onClick={() => setAmount(100)} className="text-[#005792] text-sm ml-5 cursor-pointer">
             Max
           </p>
         </div> */}

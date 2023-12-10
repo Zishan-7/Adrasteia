@@ -18,14 +18,14 @@ const Swap = () => {
 
   return (
     <div className="flex h-[600px] w-full flex-col items-center">
-      <h1 className="text-xl font-medium">SWAP</h1>
+      <h1 className="text-xl font-medium text-[#005792]">SWAP</h1>
       <FromTokenContainer swapData={swapData} setSwapData={setSwapData} />
       <img src={SwapLogo} alt="Swap logo" width={'30px'} height={'20px'} />
       <ToTokenContainer swapData={swapData} setSwapData={setSwapData} />
       <SwapDetails />
       <button
         onClick={() => console.log({ ...swapData, from: safeSelected })}
-        className="flex h-14 w-full items-center mt-auto mb-2 justify-center rounded-lg bg-[#64c2ff] font-medium"
+        className="flex h-14 text-white w-full items-center mt-auto mb-2 justify-center rounded-lg bg-[#005792] font-medium"
       >
         Confirm Swap
       </button>
